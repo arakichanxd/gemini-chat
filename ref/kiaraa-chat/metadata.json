@@ -1,0 +1,8 @@
+{
+  "name": "Kiaraa Chat",
+  "description": "A WhatsApp-style chat application featuring Kiaraa, an AI companion powered by Gemini 2.5 Flash, capable of text and voice interactions with dynamic background generation.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}

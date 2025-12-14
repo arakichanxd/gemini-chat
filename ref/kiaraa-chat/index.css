@@ -1,0 +1,246 @@
+/* Kiaraa Chat - Global Styles */
+
+/* ===== Custom Scrollbar ===== */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(134, 150, 160, 0.3);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(134, 150, 160, 0.5);
+}
+
+/* ===== Animations ===== */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(37, 211, 102, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.4s ease-out;
+}
+
+.animate-scale-in {
+    animation: scale-in 0.2s ease-out;
+}
+
+.animate-pulse-ring {
+    animation: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Bouncy animation for reactions */
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-bounce-in {
+    animation: bounce-in 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===== Enhanced Button Styles ===== */
+.btn-call {
+    padding: 0.625rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease-out;
+    background: linear-gradient(135deg, #2a3942 0%, #1f2c34 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-call::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+}
+
+.btn-call:hover::before {
+    opacity: 1;
+}
+
+.btn-call:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
+}
+
+.btn-call:active {
+    transform: scale(0.95);
+}
+
+.btn-call svg {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-send {
+    padding: 0.625rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease-out;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+.btn-send:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+}
+
+.btn-send:active {
+    transform: scale(0.9);
+}
+
+.btn-record {
+    padding: 0.625rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease-out;
+    position: relative;
+    background: linear-gradient(135deg, #2a3942 0%, #1f2c34 100%);
+}
+
+.btn-record:hover {
+    background: linear-gradient(135deg, #374248 0%, #2a3942 100%);
+    transform: scale(1.05);
+}
+
+.btn-record.recording {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.5);
+    transform: scale(1.1);
+}
+
+.btn-record.recording::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid #ef4444;
+    animation: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ===== Glassmorphism Utilities ===== */
+.glass {
+    background: rgba(32, 44, 51, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+    background: rgba(11, 20, 26, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Input Focus States ===== */
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* ===== Selection Color ===== */
+::selection {
+    background: rgba(37, 211, 102, 0.3);
+    color: inherit;
+}
+
+/* ===== Smooth Transitions for Interactive Elements ===== */
+button,
+a,
+input,
+textarea {
+    transition: all 0.2s ease;
+}
+
+/* ===== Remove Tap Highlight on Mobile ===== */
+* {
+    -webkit-tap-highlight-color: transparent;
+}

@@ -1,0 +1,179 @@
+SubNP Logo
+Home
+Services
+Gallery
+Support Us
+Switch language
+Toggle theme
+
+Create
+Free API
+Generate AI Images Programmatically
+Access our free API to integrate AI image generation into your applications. Simple integration with comprehensive documentation.
+
+API Status
+API Statistics
+Real-time usage statistics
+Total Requests
+
+3,273
+
+Success Rate
+
+72%
+
+Last Hour
+
+2
+
+Successful
+
+2,371
+
+Failed Requests
+
+902
+
+Last updated: 08/12/2025, 12:48:40
+System Health
+Current system status
+healthy
+v1.1.0
+Components
+
+Storage
+healthy
+Stats Service
+healthy
+Uptime Stats
+
+Success Rate
+
+72%
+
+Last Hour
+
+3
+
+Last updated: 08/12/2025, 12:48:41
+Advertisement
+Developer API
+Power Your Applications with AI
+Integrate our powerful AI image generation capabilities into your applications with our free and developer-friendly API.
+
+Real-time Generation
+Get real-time updates on your image generation progress with server-sent events (SSE).
+
+Multiple Models
+Choose from various AI models optimized for different use cases and styles.
+
+Free to Use
+Get started with our free tier and scale as your needs grow.
+
+View Documentation
+POST
+/api/free/generate
+// Make the request
+const response = await fetch("/api/free/generate", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    prompt: "A beautiful sunset over mountains",
+    model: "turbo"
+  })
+});
+
+// Create event source for streaming updates
+const reader = response.body
+  .pipeThrough(new TextDecoderStream())
+  .pipeThrough(new TransformStream({
+    transform(chunk, controller) {
+      // Parse SSE data
+      const lines = chunk.split('\n');
+      const messages = lines
+        .filter(line => line.startsWith('data: '))
+        .map(line => JSON.parse(line.slice(6)));
+      
+      messages.forEach(data => {
+        switch (data.status) {
+          case 'processing':
+            console.log('Progress:', data.message);
+            break;
+          case 'complete':
+            console.log('Image URL:', data.imageUrl);
+            break;
+          case 'error':
+            console.error('Error:', data.message);
+            break;
+        }
+      });
+    }
+  }));
+
+// Start reading the stream
+reader.read();
+Easy Integration
+Simple REST API with JSON responses
+Multiple Models
+Choose from various AI models
+Usage Stats
+Monitor your API usage
+Base URL
+https://t2i.mcpcore.xyz
+API Endpoints
+GET
+/api/free/models
+Get a list of available image generation models.
+// Fetch available models
+const response = await fetch("https://subnp.com/api/free/models");
+const data = await response.json();
+
+// Example response:
+{
+  success: true,
+  models: [
+    { model: "turbo", provider: "MitraAi" },
+    { model: "flux", provider: "MitraAi" },
+    { model: "magic", provider: "MagicStudio" }
+  ]
+}
+GET
+/api/free/stats
+Get API usage statistics.
+// Fetch API statistics
+const response = await fetch("https://subnp.com/api/free/stats");
+const data = await response.json();
+
+// Example response:
+{
+  timestamp: "2024-01-01T00:00:00Z",
+  totalRequests: 1250,
+  successRate: 98.5,
+  lastHourRequests: 45
+}
+SubNP
+Create stunning AI-generated images and music with MitraAI technology. Transform your ideas into beautiful visuals and audio in seconds.
+
+Twitter
+Instagram
+Facebook
+Product
+Create Image
+Create TTS
+AI Summarizer
+Gallery
+Features
+Free API
+Support Us
+Company
+About
+Our Sponsors
+Contact
+© 2025 SubNP. All rights reserved.
+
+Terms of Service
+Privacy Policy
+Cookies
+
+Toggle Actions
+Free API | AI Image Generation API | SubNP

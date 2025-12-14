@@ -1,0 +1,19 @@
+1) supabase project url=https://zqxepggmlxyhzjgiwusb.supabase.co
+
+2) supabase publishable key=sb_publishable_6Lpadxvn9HrXEV9k0CbEQQ_1e6QVf6l
+
+3) supabase anon key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxeGVwZ2dtbHh5aHpqZ2l3dXNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwOTEwODgsImV4cCI6MjA4MDY2NzA4OH0.yRsvTv_9JBn3lEODMfY0PJIGykZtRwW0I-Sc4FNkJLA
+
+4) supabase service role key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxeGVwZ2dtbHh5aHpqZ2l3dXNiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NTA5MTA4OCwiZXhwIjoyMDgwNjY3MDg4fQ.dOPW66SWmc7UQmy7EJ2FZwB4FnwmoCfvMScUMS_0uZo
+
+5) supabase legacy jwt secret=y2B5lB1gbhHyxqdFT5ke50h/aGUPEIAjwuwuHhsB1g0zpV8By8o5UEtdkfxrdE8dX01Ld8M1FKheQR5f/vpBGg==
+
+6) google ai studio api key=AIzaSyCDkrjc_O1-1gdmuXPTWi34ZmUBaGJIw6I
+
+also browse web we wil be using 2.0 flash and 2.5 flash models for texy gen
+
+google voile tts for sending voice notes
+
+google live for calls with charecter
+
+
